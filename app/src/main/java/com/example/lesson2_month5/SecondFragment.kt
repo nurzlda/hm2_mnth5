@@ -6,15 +6,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import com.example.lesson2_month5.databinding.FragmentSecondBinding
 
 class SecondFragment : Fragment() {
 
 
-    private lateinit var binding:FragmentSecondBinding
+    private lateinit var binding: FragmentSecondBinding
 
-    private val viewModel : MainActivityViewModel by viewModels()
+
+    private val args: SecondFragmentArgs by navArgs()
 
 
     override fun onCreateView(
@@ -27,27 +28,17 @@ class SecondFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        getRequest()
+        getArgs()
     }
+
 
     @SuppressLint("SetTextI18n")
-    private fun getRequest(){
-
-        val firstName = arguments?.getString("MyArg")
-        binding.tvYou.text = firstName
-
-        val secondName = arguments?.getString("MyArg2")
-        binding.tvMe.text = secondName
-
-        viewModel.getRequest(binding.tvYou.text.toString(), binding.tvMe.text.toString())
-            .observe(viewLifecycleOwner) { with(binding){
-                tvPercentage.text = it.percentage + "%"
-                tvYou.text = it.firstName
-                tvMe.text = it.secondName
-                tvResult.text = it.result
-            }
-            }
+    private fun getArgs() { with(binding){
+        tvYou.text= args.calculate.firstName
+        tvMe.text = args.calculate.secondName
+        tvResult.text = args.calculate.result
+        tvPercentage.text= args.calculate.percentage
     }
 
-
+    }
 }

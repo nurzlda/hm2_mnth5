@@ -3,7 +3,7 @@ package com.example.lesson2_month5
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 
-class MainActivityViewModel : ViewModel() {
+class FirstFragmentViewModel : ViewModel() {
 
     val repository = Repository()
 
