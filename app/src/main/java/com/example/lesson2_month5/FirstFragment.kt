@@ -22,28 +22,27 @@ class FirstFragment : Fragment() {
     ): View {
         binding = FragmentFirstBinding.inflate(layoutInflater)
         return binding.root
+
+
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.btnRequest.setOnClickListener {
 
             val bundle = Bundle()
             val firstName = binding.edtFirstName.text.toString()
             if (firstName.isEmpty()){
                 binding.edtFirstName.error = "Заполните строку"
-            }
+           }
             val secondName = binding.edtSecondName.text.toString()
             if (secondName.isEmpty()){
                 binding.edtSecondName.error = "Заполните строку"
             }else{
-
-            val data = firstName
-            val data2 = secondName
-
-            bundle.putString("MyArg", data)
-            bundle.putString("MyArg2", data2)
-            findNavController().navigate(R.id.action_firstFragment_to_firstFragment2, bundle)
+                bundle.putString("MyArg", firstName)
+                bundle.putString("MyArg2", secondName)
+                findNavController().navigate(R.id.action_firstFragment_to_firstFragment2, bundle)
             }
         }
     }
