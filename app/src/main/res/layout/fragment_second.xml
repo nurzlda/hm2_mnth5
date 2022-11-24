@@ -69,11 +69,12 @@
         android:layout_height="wrap_content"/>
 
     <Button
+        android:id="@+id/saveBtn"
         android:backgroundTint="@color/purple_500"
         android:background="@drawable/edt_bc"
         android:layout_marginTop="70dp"
         android:layout_gravity="center"
-        android:text="@string/try_again"
+        android:text="@string/save_data"
         android:paddingHorizontal="60dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
