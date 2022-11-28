@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.lesson2_month5.databinding.ItemHistoryBinding
 import kotlin.collections.ArrayList
 
-class HistoryAdapter(private val historyList : ArrayList<CalculateModel>) :
+class HistoryAdapter(private val historyList : List<CalculateModel>) :
     RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>(){
 
 

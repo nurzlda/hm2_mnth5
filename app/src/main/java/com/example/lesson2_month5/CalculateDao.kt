@@ -12,7 +12,7 @@ interface CalculateDao {
     fun insert(model: CalculateModel)
 
     @Query("SElECT * FROM 'calculate-history'")
-    fun getAll(): LiveData<ArrayList<CalculateModel>>
+    fun getAll(): LiveData<List<CalculateModel>>
 
 
 }

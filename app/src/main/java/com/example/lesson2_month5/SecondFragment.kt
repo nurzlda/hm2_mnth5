@@ -31,8 +31,10 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         getArgs()
 
-        binding.saveBtn.setOnClickListener { findNavController().navigate(R.id.
-        action_SecondFragment_to_thirdFragment) }
+        binding.saveBtn.setOnClickListener {
+            findNavController().navigate(R.id.
+        action_SecondFragment_to_thirdFragment)
+        }
     }
 
 
